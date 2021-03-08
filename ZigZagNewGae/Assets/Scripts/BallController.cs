@@ -9,7 +9,7 @@ public class BallController : MonoBehaviour
     Rigidbody rb;
 
     bool started;
-    bool gameOver;
+    public bool gameOver;
 
     private void Awake()
     {
@@ -37,8 +37,9 @@ public class BallController : MonoBehaviour
 
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
-            rb.velocity = new Vector3(0, -5f, 0);
+            rb.velocity = new Vector3(0, -25f, 0);
             gameOver = true;
+            
         }
 
         if (Input.GetMouseButtonDown(0) && !gameOver)
