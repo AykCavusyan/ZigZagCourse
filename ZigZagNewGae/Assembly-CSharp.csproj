@@ -66,8 +66,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallController.cs" />
     <Compile Include="Assets\Scripts\CamScript.cs" />
+    <Compile Include="Assets\Scripts\GameManagerScript.cs" />
+    <Compile Include="Assets\Scripts\PlatformManagerScript.cs" />
     <Compile Include="Assets\Scripts\PlatformScript.cs" />
     <Compile Include="Assets\Scripts\TriggerScript.cs" />
+    <Compile Include="Assets\Scripts\UiManagerScript.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Users/Sebastian/OneDrive/Desktop/Unity/2019.4.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

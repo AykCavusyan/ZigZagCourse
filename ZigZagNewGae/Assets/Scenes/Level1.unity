@@ -531,6 +531,8 @@ MonoBehaviour:
   newPlatform: {fileID: 810654646475308590, guid: 81fd410f7dbf188469f04431a2b12fd3,
     type: 3}
   gameOver: 0
+  particle: {fileID: 2265028002231094880, guid: 89df8c9c833668040ac704f953fabe57,
+    type: 3}
 --- !u!1001 &913298560554102610
 PrefabInstance:
   m_ObjectHideFlags: 0

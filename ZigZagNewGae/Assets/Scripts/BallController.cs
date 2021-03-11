@@ -12,6 +12,8 @@ public class BallController : MonoBehaviour
     public bool gameOver;
     bool grounded;
 
+    public GameObject particle;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -64,6 +66,8 @@ public class BallController : MonoBehaviour
 
     }
 
+    
+
     void SwitchDirection()
     {
         if(rb.velocity.z > 0 && grounded == true)
@@ -78,19 +82,40 @@ public class BallController : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(0,210,0);
-        rb.useGravity = true;
-        grounded = false;
+
+        if (grounded == true)
+        {
+            rb.AddForce(0, 210, 0);
+            rb.useGravity = true;
+            grounded = false;
+        }
+        
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == ("Player"))
+        // Player means the platform.
+        if (collision.gameObject.tag == "Player")
         {
             rb.useGravity = false;
             grounded = true;
 
+        }
+
+        
+    }
+
+     void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Diamond")
+        {
+            GameObject newParticle = Instantiate(particle, other.gameObject.transform.position, Quaternion.identity);
+            other.GetComponent<Rigidbody>().AddForce(0, 210, 0);
+            Destroy(other.gameObject, 1f);
+            Destroy(newParticle, 1f);
+             
+            
         }
     }
 }
